@@ -6,6 +6,20 @@ log-level: info
 proxies:
 - name: 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
   type: vless
+  server: 66.81.247.155
+  port: 2083
+  uuid: 6cc29a05-4828-4e48-a34a-20b7ada60e85
+  udp: true
+  tls: true
+  skip-cert-verify: true
+  servername: testmikonim.hydrymhmdamyn7.workers.dev
+  network: ws
+  ws-opts:
+    path: /OAZko425kNFF0PpQ
+    headers:
+      Host: testmikonim.hydrymhmdamyn7.workers.dev
+- name: 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
+  type: vless
   server: 46.8.200.91
   port: 443
   uuid: b8201bab-fa6c-4f6e-b289-b5da660c6f69
@@ -24,11 +38,13 @@ proxy-groups:
   proxies:
   - AUTO
   - 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
+  - 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.google.com/generate_204
   interval: 300
   proxies:
   - 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
+  - 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
 rules:
 - MATCH,PROXIES
